@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/mdb.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+  <link href="js/mdb1.js" rel="stylesheet">
+  <style type="text/css">
+  
+  html,
+  body,
+  header,
+  .view {
+    background: url("img/b1.jpg")no-repeat center;
+      background-size: cover;
+    height: 100%;
+    
+  }
+  
+.parallax {
+  background-image: url('img/b.jpg');
+  height: 25%; 
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+* { color:black;
+    font-weight: bold;
+ text-decoration: none;}
+.uu{
+    margin-top:35px;
+}
+  </style>
+</head>
+
+<body>
+        <nav class="navbar fixed-top navbar-expand-lg navbar-light Fire Engine red scrolling-navbar" >
+                <div class="container">
+                  <a class="navbar-brand waves-effect" href="index.html"  target="">
+                    <strong class="green-text" >FJN</strong>
+                  </a>
+                  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                      <li class="nav-item active">
+                        <a class="nav-link waves-effect" href="#">Home
+                          <span class="sr-only">(current)</span>
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link waves-effect" href="" target="">50% OFF!!</a>
+                      </li>
+                     
+                      <li class="nav-item">
+                        <a class="nav-link waves-effect" href="" target="_blank">TAKE A TOUR</a>
+                      </li>
+                    </ul>
+                    <ul class="navbar-nav nav-flex-icons">
+                      <li class="nav-item">
+                        <a class="nav-link waves-effect">
+                          <span class="badge green z-depth-1 mr-1"> 1 </span>
+                          <i class="fas fa-shopping-cart"></i>
+                          <span class="clearfix d-none d-sm-inline-block" style="color:green;"> Cart </span>
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="https://www.facebook.com/" class="nav-link waves-effect" target="">
+                          <i class="fab fa-facebook-f" style="color:blue;"></i>
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="https://twitter.com/login?lang=en" class="nav-link waves-effect" target="">
+                          <i class="fab fa-twitter" style="color:rgb(0, 102, 255);"></i>
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="sinup.html" class="nav-link border border-light rounded waves-effect"
+                          target="">
+                          <i class="fab fa-logout mr-2"></i>Create Account
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                          <a href="login.html" class="nav-link border border-light rounded waves-effect"
+                            target="">
+                            <i class="fab fa-logout mr-2"></i>Login
+                          </a>
+                        </li>
+                    </ul>
+            
+                  </div>
+            
+                </div>
+              </nav>
+        
+             <div class="view intro-2">
+                    <div class="full-bg-img">
+                        <div class="mask rgba-black-light flex-center">
+                            <div class="container text-center white-text">
+                                <div class="white-text text-center wow fadeInUp">
+                                       <div  class="wow fadeInUp">
+                                    <h1 class= "animated rubberBand infinite" style="font-weight:900; font-size: 50px; color:black; font-style: oblique;">Welcome beautiful peeps!!</h1>
+                                    </div>
+                                    <br>
+        
+                                    <h1>
+                                            <a href="" class="typewrite" style="color:red;" data-period="2000" data-type='[ "Butter Cake", "Pizza", "Burger", "Meal" ]'>
+                                              <span class="wrap"></span>
+                                            </a>
+                                          </h1>
+                                          <button class="btn peach-gradient">Peach</button>
+                                
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                  
+  
+  
+     
+<script>
+
+var TxtType = function(el, toRotate, period) {
+        this.toRotate = toRotate;
+        this.el = el;
+        this.loopNum = 0;
+        this.period = parseInt(period, 2) || 2000;
+        this.txt = '';
+        this.tick();
+        this.isDeleting = false;
+    };
+
+    TxtType.prototype.tick = function() {
+        var i = this.loopNum % this.toRotate.length;
+        var fullTxt = this.toRotate[i];
+
+        if (this.isDeleting) {
+        this.txt = fullTxt.substring(0, this.txt.length - 1);
+        } else {
+        this.txt = fullTxt.substring(0, this.txt.length + 1);
+        }
+
+        this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
+
+        var that = this;
+        var delta = 200 - Math.random() * 100;
+
+        if (this.isDeleting) { delta /= 2; }
+
+        if (!this.isDeleting && this.txt === fullTxt) {
+        delta = this.period;
+        this.isDeleting = true;
+        } else if (this.isDeleting && this.txt === '') {
+        this.isDeleting = false;
+        this.loopNum++;
+        delta = 500;
+        }
+
+        setTimeout(function() {
+        that.tick();
+        }, delta);
+    };
+
+    window.onload = function() {
+        var elements = document.getElementsByClassName('typewrite');
+        for (var i=0; i<elements.length; i++) {
+            var toRotate = elements[i].getAttribute('data-type');
+            var period = elements[i].getAttribute('data-period');
+            if (toRotate) {
+              new TxtType(elements[i], JSON.parse(toRotate), period);
+            }
+        }
+        var css = document.createElement("style");
+        css.type = "text/css";
+        css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid red}";
+        document.body.appendChild(css);
+    };
+</script>
+      </div>
+      <div class="parallax">
+   <h1 style="color:black; font-size:60px;"></h1>
+      </div>
+      <div class="parallax"></div> 
+      <div class="container">
+        
+            <section class="mt-5 wow fadeIn">
+              <div class="container">
+              <div class="row">
+                <div class="col col-sm-6">
+                  <img src="img/97.gif" class="img-fluid z-depth-1-half"
+                    alt="">
+                </div>
+                <div class="col col-sm-6">
+                  <h3 class="h3 mb-3" style="color:yellow">JOIN OUR GOLD MEMBERSHIP</h3>
+                  <p>This is special offer for who join our membership they will be treated with  
+                    <strong>FJN</strong> ) special schemes</p>
+                  <p>Read details below to know more about FJN.</p>
+                  <hr>
+                  <p>
+                    <strong>$400</strong> To enjoy benefits,
+                    <strong>74</strong> CSS animations, SASS files, templates, tutorials and many more.
+                    <strong>Free for personal and commercial use.</strong>
+                  </p>
+                  <a target="_blank" href="https://mdbootstrap.com/docs/jquery/getting-started/download/" class="btn btn-green btn-md">Enjoy</a>
+                </div>
+                </div>
+              </div>
+            </section>
+              <section class="text-center ">
+                    <div class="row wow fadeIn">
+                      <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 ">
+                        <div class="card">
+                          <div class="view overlay">
+                            <img src="img/3.jpg" class="card-img-top"
+                              alt="">
+                            <a>
+                              <div class="mask rgba-white-slight"></div>
+                            </a>
+                          </div>
+                          <div class="card-body text-center">
+                            <a href="" class="grey-text">
+                              <h5></h5>
+                            </a>
+                            <h5>
+                              <strong>
+                                <a href="" class="dark-grey-text">
+                                  <span class="badge badge-pill danger-color">NEW</span>
+                                </a>
+                              </strong>
+                            </h5>
+            
+                            <h4 class="font-weight-bold blue-text">
+                              <strong>120</strong>
+                            </h4>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 ">
+                        <div class="card">
+                          <div class="view overlay">
+                            <img src="img/4.jpg" class="card-img-top"
+                              alt="">
+                            <a>
+                              <div class="mask rgba-white-slight"></div>
+                            </a>
+                          </div>
+                          <div class="card-body text-center">
+                            <a href="" class="grey-text">
+                              <h5></h5>
+                            </a>
+                            <h5>
+                              <strong>
+                                <a href="" class="dark-grey-text">
+                                  <span class="badge badge-pill warning-color">20%off</span>
+                                </a>
+                              </strong>
+                            </h5>
+            
+                            <h4 class="font-weight-bold blue-text">
+                              <strong>139</strong>
+                            </h4>
+            
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 ">
+                        <div class="card">
+                          <div class="view overlay">
+                            <img src="img/7.jpg" class="card-img-top"
+                              alt="">
+                            <a>
+                              <div class="mask rgba-white-slight"></div>
+                            </a>
+                          </div>
+                          <div class="card-body text-center">
+                            <a href="" class="grey-text">
+                              <h5></h5>
+                            </a>
+                            <h5>
+                              <strong>
+                                <a href="" class="dark-grey-text">
+                                  <span class="badge badge-pill primary-color">bestseller</span>
+                                </a>
+                              </strong>
+                            </h5>
+            
+                            <h4 class="font-weight-bold blue-text">
+                              <strong>99</strong>
+                            </h4>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 ">
+                        <div class="card">
+                          <div class="view overlay">
+                            <img src="img/5.jpg" class="card-img-top"
+                              alt="">
+                            <a>
+                              <div class="mask rgba-white-slight"></div>
+                            </a>
+                          </div>
+                          <div class="card-body text-center">
+                            <a href="" class="grey-text">
+                              <h5></h5>
+                            </a>
+                            <h5>
+                              <strong>
+                                <a href="" class="dark-grey-text">
+                                  <span class="badge badge-pill warning-color">3%off</span>
+                                </a>
+                              </strong>
+                            </h5>
+                            <h4 class="font-weight-bold blue-text">
+                              <strong>319</strong>
+                            </h4>
+                          </div>
+                        </div>            
+                      </div>
+                    </div>
+                    <div class="row wow fadeIn">
+                      <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 ">
+                        <div class="card">
+                          <div class="view overlay">
+                            <img src="img/8.jpg" class="card-img-top"
+                              alt="">
+                            <a>
+                              <div class="mask rgba-white-slight"></div>
+                            </a>
+                          </div>
+                          <div class="card-body text-center">
+                            <a href="" class="grey-text">
+                              <h5></h5>
+                            </a>
+                            <h5>
+                              <strong>
+                                <a href="" class="dark-grey-text">
+                                  <span class="badge badge-pill danger-color">NEW</span>
+                                </a>
+                              </strong>
+                            </h5>
+                            <h4 class="font-weight-bold blue-text">
+                              <strong>420</strong>
+                            </h4>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 ">
+                        <div class="card">
+                          <div class="view overlay">
+                            <img src="img/1.jpg" class="card-img-top"
+                              alt="">
+                            <a>
+                              <div class="mask rgba-white-slight"></div>
+                            </a>
+                          </div>
+                          <div class="card-body text-center">
+                            <a href="" class="grey-text">
+                              <h5></h5>
+                            </a>
+                            <h5>
+                              <strong>
+                                <a href="" class="dark-grey-text">
+                                        <span class="badge badge-pill danger-color">NEW</span>
+                                </a>
+                              </strong>
+                            </h5>
+                            <h4 class="font-weight-bold blue-text">
+                              <strong>339</strong>
+                            </h4>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 ">
+                        <div class="card">
+                          <div class="view overlay">
+                            <img src="img/9.jpg" class="card-img-top"
+                              alt="">
+                            <a>
+                              <div class="mask rgba-white-slight"></div>
+                            </a>
+                          </div>
+                          <div class="card-body text-center">
+                            <a href="" class="grey-text">
+                              <h5></h5>
+                            </a>
+                            <h5>
+                              <strong>
+                                <a href="" class="dark-grey-text">
+                                  <span class="badge badge-pill primary-color">bestseller</span>
+                                </a>
+                              </strong>
+                            </h5>
+                            <h4 class="font-weight-bold blue-text">
+                              <strong>299</strong>
+                            </h4>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 ">
+                        <div class="card">
+                          <div class="view overlay">
+                            <img src="img/10.jpg" class="card-img-top"
+                              alt="">
+                            <a>
+                              <div class="mask rgba-white-slight"></div>
+                            </a>
+                          </div>
+                          <div class="card-body text-center">
+                            <a href="" class="grey-text">
+                              <h5></h5>
+                            </a>
+                            <h5>
+                              <strong>
+                                <a href="" class="dark-grey-text">
+                                  <span class="badge badge-pill warning-color">20%off</span>
+                                </a>
+                              </strong>
+                            </h5>
+                            <h4 class="font-weight-bold blue-text">
+                              <strong>219</strong>
+                            </h4>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </section>
+                <h2 class="my-5 h3 text-center">...Our Happy Customers</h2>
+                <div class="container">
+                  <div class="row">
+                    <div class="col col-sm-3">
+                
+                        <h5 class="feature-title font-bold mb-1">Adarsh</h5>
+                        <p class="grey-text mt-2">Love Food Junction !! It's so much easier to order food when you have a hectic schedule,thanks to zomato ! Best offers and having zomato gold is a blessing for people who eat restaurant food daily ❤️💞 </p>
+                      </div>
+                    <div class="col col-sm-3">
+                        <h5 class="feature-title font-bold mb-1">Shivam</h5>
+                        <p class="grey-text mt-2">On time delivery, thanks, would love to order on Food Junction... Looks like most of them have rated 1 * for the on going issue.. should rate food and delivery
+                        </p>
+                      </div>
+                      <div class="col col-sm-3">
+                        <h5 class="feature-title font-bold mb-1">Rohit</h5>
+                        <p class="grey-text mt-2">best food delivery app. I want to give 10 stars but they ahem only 5. so 5 stars. Best than uber. Delivery was on time and fresh food and cheap
+                        </p>
+                      </div>
+                      <div class="col col-sm-3">
+                        <h5 class="feature-title font-bold mb-1">Quinny</h5>
+                        <p class="grey-text mt-2">1st time I went to tippling street rajaouri garden ,the food was good,freshly cooked & well presented &the service was also fast & good & waiters were also very attaentive.
+                        </p>
+                    </div>
+                  </div>
+                </div>
+   
+              </section>
+            </div>
+          </main>
+          <hr class="my-5">
+          <section>
+            <h3 class="h3 text-center mb-3" style="color:green;">We are everywhere</h3>
+               </section>
+               <div class="container">
+                <div class="row">
+                  <div class="col col-sm-3">
+               <img src="img/c1.jpg" alt="thumbnail" class="img-thumbnail"
+  style="width: 500px; height:250px;">
+  </div>
+
+  <div class="col col-sm-3">
+  <img src="img/c2.jpg" alt="thumbnail" class="img-thumbnail"
+  style="width: 500px; height : 250px;" >
+  </div>
+  
+  
+  <div class="col col-sm-3">
+  <img src="img/c3.jpg" alt="thumbnail" class="img-thumbnail"
+  style="width: 500px ;height:250px;">
+  </div>
+  
+  
+  <div class=" col col-sm-3 ">
+  <img src="img/c4.jpg" alt="thumbnail" class="img-thumbnail"
+  style="width: 500px; height:250px;">
+  </div>
+
+  
+  </div>
+  </div>
+  
+  <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+  <script type="text/javascript" src="js/popper.min.js"></script>
+  <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="js/mdb.min.js"></script>
+
+ 
+<footer class="page-footer font-small cyan darken-3" >
+        <div class="container-fluid" style="background-color:black;">
+          <div class="row">
+            <div class="col-md-12 py-5">
+              <div class="mb-5 flex-center"  >
+                <a class="fb-ic" >
+                  <i class="fab fa-facebook-f fa-lg blue-text mr-md-5 mr-3 fa-3x" > </i>
+                </a>
+                <a class="tw-ic">
+                  <i class="fab fa-twitter fa-lg blue-text mr-md-5 mr-3 fa-3x"> </i>
+                </a>
+                <a class="gplus-ic">
+                  <i class="fab fa-google-plus-g fa-lg red-text mr-md-5 mr-3 fa-3x"> </i>
+                </a>
+                <a class="li-ic">
+                  <i class="fab fa-linkedin-in fa-lg blue-text mr-md-5 mr-3 fa-3x"> </i>
+                </a>
+                <a class="ins-ic">
+                  <i class="fab fa-instagram fa-lg pink-text mr-md-5 mr-3 fa-3x"> </i>
+                </a>
+                <a class="pin-ic">
+                  <i class="fab fa-pinterest fa-lg red-text fa-3x"> </i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="footer-copyright text-center py-2" style="background-color:black;">© 2018 Copyright:
+          <a href="https://mdbootstrap.com/education/bootstrap/"> Foodjunction.com</a>
+        </div>
+      </footer>
+      
+      </body>
+</html>
