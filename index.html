@@ -50,6 +50,36 @@
     99%{    color:pink;  }
     100%{   color:orange;    }
 }
+.rr {
+  width:400px;
+  position: relative;
+  -webkit-animation: mymove 5s infinite; 
+  animation: mymove 5s infinite;
+}
+@-webkit-keyframes mymove {
+  0%   {top: 0px;}
+  11%  {top: 20px;}
+  22%  {top: 40px}
+  33% {top: 60px;}
+  44% {top:80px;}
+  55%{top: 100px;}
+  66%   {top: 80px;}
+  77%  {top: 60px;}
+  88%  {top: 40px}
+  100% {top: 20px;}
+}
+@keyframes mymove {
+  0%   {top: 0px;}
+  11%  {top: 20px;}
+  22%  {top: 40px}
+  33% {top: 60px;}
+  44% {top:80px;}
+  55%{top: 100px;}
+  66%   {top: 80px;}
+  77%  {top: 60px;}
+  88%  {top: 40px}
+  100% {top: 20px;}
+}
   </style>
 </head>
 
@@ -121,22 +151,24 @@
                             <div class="container text-center white-text">
                                 <div class="white-text text-center wow fadeInUp">
                                        <div  class="wow fadeInUp">
-                                    <h1 class= "animated rubberBand infinite" style="font-weight:900; font-size: 50px; color:red; font-style: oblique;">Welcome beautiful peeps!!</h1>
+                                    <h1 class= "animated rubberBand infinite" style="font-weight:900; font-size: 50px; color:black;text-shadow: 2px 2px #FF0000; font-style: oblique;">Welcome beautiful peeps!!</h1>
                                     </div>
                                     <br>
         
                                     <h1>
-                                            <a href="" class="typewrite" style="color:black;" data-period="2000" data-type='[ "Butter Cake", "Pizza", "Burger", "Meal" ]'>
+                                            <a href="" class="typewrite"  style="color:black;" data-period="2000" data-type='[ "Butter Cake", "Pizza", "Burger", "Meal" ]'>
                                               <span class="wrap"></span>
                                             </a>
                                           </h1>
-                                          <button class="btn red animated fadeInDownBig " >special zone</button>
+                                          <button class="btn red animated fadeInDownBig " text-shadow: 2px 2px #FF0000; >special zone</button>
                                           <div class="row justify-content-between">
-                                             <div class="col-3"  style="font-weight:900; font-size: 50px; color:red; font-style: oblique;">
+                                             <div class="col-4"  style="font-weight:900; font-size: 50px; color:red; font-style: oblique; ">
                                                
                                               </div>
-                                              <div class="col-3  blinking badge red text-wrap animated fadeOutLeftBig " style="font-weight:900; float:left; font-size: 50px; color:rgb(219, 188, 48); font-style: PT Serif ;">
+                                              <div class="rr">
+                                              <div class="col-4  blinking badge red text-wrap  " style="font-weight:900;  font-size: 50px; font-style: PT Serif ;text-shadow: 2px 2px #FF0000;">
                                              50% OFF!
+                                              </div>
                                               </div>
                                             </div>
                                           </div>
